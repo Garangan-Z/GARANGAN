@@ -155,9 +155,7 @@ def menu():
         exit(" %s[-] anda tidak terhubung ke internet!"%(M))
 
     logo()
-    print(" Nama        : %s"%(nama)
-    print(" ID          : %s"%(uid)
-    print(" Tgl. Lahir  : %s"%(ttl)
+    print(' Nama        : %s'%(nama)
     print(" [1]. crack teman/publik")
     print(" [2]. cek opsi akun cp")
     print(" [3]. lihat hasil crack")
