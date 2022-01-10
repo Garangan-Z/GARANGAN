@@ -148,19 +148,17 @@ def menu():
         ttl = a['birthday']
     except (KeyError, IOError):
         os.system('clear')
-        logo()
         print("\n %s[-] token kadaluwarsa!"%(M))
         os.system('rm -f token.txt')
     except requests.exceptions.ConnectionError:
         exit(" %s[-] anda tidak terhubung ke internet!"%(M))
 
     logo()
-    print(' Nama        : %s'%(nama)
-    print(" [1]. crack teman/publik")
-    print(" [2]. cek opsi akun cp")
-    print(" [3]. lihat hasil crack")
-    print(" [4]. setting user agent")
-    print(" [5]. logout (hapus token)")
+    print("[1]. crack teman/publik")
+    print("[2]. cek opsi akun cp")
+    print("[3]. lihat hasil crack")
+    print("[4]. setting user agent")
+    print("[5]. logout (hapus token)")
     asw = input(" [?] pilih menu : ")
     if asw == "":
     	menu()
