@@ -154,7 +154,7 @@ def menu():
     except requests.exceptions.ConnectionError:
         exit(" %s[-] anda tidak terhubung ke internet!"%(M))
 
-    logo()
+    menu()
     print("[1]. crack teman/publik")
     print("[2]. cek opsi akun cp")
     print("[3]. lihat hasil crack")
