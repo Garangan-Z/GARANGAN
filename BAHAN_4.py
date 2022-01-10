@@ -150,7 +150,7 @@ def menu():
         os.system('clear')
         print("\n %s[-] token kadaluwarsa!"%(M))
         os.system('rm -f token.txt')
-        tokenz()
+        token()
     except requests.exceptions.ConnectionError:
         exit(" %s[-] anda tidak terhubung ke internet!"%(M))
 
