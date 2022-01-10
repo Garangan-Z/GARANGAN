@@ -181,7 +181,7 @@ def menu():
     	gantiua()
     elif asw == "5":
     	os.system('rm -f token.txt')
-    	jalan(" [✓] berhasil menghapus token ")
+    	jalan(" [-] berhasil menghapus token ")
     	exit()
     else:
     	jalan(" [!] pilih jawaban dengan bener ! ")
@@ -196,7 +196,7 @@ def gantiua():
 			zedd = open('ugent.txt', 'w')
 			zedd.write(ajg)
 			zedd.close()
-			print(" [✓] berhasil mengganti ua")
+			print(" [-] berhasil mengganti ua")
 			input(" [*] tekan enter untuk kembali ke menu")
 			menu()
 		except KeyError:
@@ -265,7 +265,7 @@ def cek_opsi(user,pw):
 			print("\r %s[!] akun terkunci tampilan sesi new%s"%(M,N))
 		else:
 			loop+=1
-			print("\r [✓] akun tidak terkena checkpoint, silahkan login di fb lite \n %s* --> %s|%s|%s%s				\n\n"%(H,user,pw,session.cookies.get_dict(),N))
+			print("\r [-] akun tidak terkena checkpoint, silahkan login di fb lite \n %s* --> %s|%s|%s%s				\n\n"%(H,user,pw,session.cookies.get_dict(),N))
 	elif "checkpoint" in session.cookies.get_dict():
 		loop+=1
 		title=re.findall("\<title>(.*?)<\/title>",str(response))
@@ -285,7 +285,7 @@ def cek_opsi(user,pw):
 				if "y" in ubahP:
 					ubah_pw(user,pw,session,response,link2)
 				else:
-					print("\r [✓] akun tap yes, silahkan login di fb lite \n %s[✓] %s|%s|%s%s									\n"%(H,user,pwbaru,coki[0],N))
+					print("\r [-] akun tap yes, silahkan login di fb lite \n %s[✓] %s|%s|%s%s									\n"%(H,user,pwbaru,coki[0],N))
 			elif "Masukkan Kode Masuk untuk Melanjutkan" in re.findall("\<title>(.*?)<\/title>",str(response)):
 				print("\r %s[!] akun terpasang autentikasi dua faktor%s							\n"%(M,N))
 			else:
