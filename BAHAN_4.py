@@ -160,17 +160,14 @@ def menu():
         exit(" %s[!] anda tidak terhubung ke internet!"%(M))
 
     logo()
-    print("──────────────────────────────────────────")
     print(" Nama        : %s"%(nama))
     print(" ID          : %s"%(uid))
-    print(" Tgl. Lahir  : %s"%(ttl))
-    print("──────────────────────────────────────────")
+    print(" Tgl. Lahir  : %s"\n%(ttl))
     print(" [1]. crack teman/publik")
     print(" [2]. cek opsi akun cp")
     print(" [3]. lihat hasil crack")
     print(" [4]. setting user agent")
     print(" [5]. logout (hapus token)")
-    print("──────────────────────────────────────────")
     asw = input(" [?] pilih menu : ")
     if asw == "":
     	menu()
@@ -184,7 +181,6 @@ def menu():
     	gantiua()
     elif asw == "5":
     	os.system('rm -f token.txt')
-    	print("──────────────────────────────────────────")
     	jalan(" [✓] berhasil menghapus token ")
     	exit()
     else:
@@ -192,7 +188,6 @@ def menu():
     	menu() 
  
 def gantiua():
-	print("──────────────────────────────────────────")
 	ajg = input(" [?] masukan ua : ")
 	if ajg in[""]:
 		menu()
@@ -201,7 +196,6 @@ def gantiua():
 			zedd = open('ugent.txt', 'w')
 			zedd.write(ajg)
 			zedd.close()
-			print("──────────────────────────────────────────")
 			print(" [✓] berhasil mengganti ua")
 			input(" [*] tekan enter untuk kembali ke menu")
 			menu()
@@ -210,10 +204,8 @@ def gantiua():
 ### CEK OPSI ###
 def cekopsi():
 	dirs = os.listdir("CP")
-	print("──────────────────────────────────────────")
 	for file in dirs:
 		print(" [*] CP/"+file)
-	print('──────────────────────────────────────────')
 	files = input(" [?] file  : ")
 	if files == "":
 		menu()
@@ -223,7 +215,6 @@ def cekopsi():
 		exit("\n [!] nama file %s tidak tersedia"%(files))
 	ubahpw()
 	print('\n [!] anda bisa mematikan data selular untuk menjeda proses cek')
-	print('──────────────────────────────────────────')
 	for memek in buka_baju:
 		kontol = memek.replace("\n","")
 		titid  = kontol.split("|")
@@ -232,14 +223,12 @@ def cekopsi():
 			cek_opsi(titid[0].replace("  * --> ",""), titid[1])
 		except requests.exceptions.ConnectionError:
 			pass
-		print('──────────────────────────────────────────')
 	print("\n [!] cek akun sudah selesai...")
 	input(" [*] tekan enter untuk kembali ke menu ")
 	time.sleep(1)
 	menu()
 
 def ubahpw():
-	print('──────────────────────────────────────────')
 	pw=input(" [?] ubah sandi tap yes?[Y/t]: ")
 	if pw == "Y" or pw == "y":
 		ubahP.append("y")
@@ -377,47 +366,37 @@ def cek_apk(coki):
 
 ### CEK HASIL ### 
 def cekhasil():
-	print('──────────────────────────────────────────')
 	print(' [1]. lihat hasil crack OK ')
 	print(' [2]. lihat hasil crack CP ')
-	print('──────────────────────────────────────────')
 	anjg = input(' [?] pilih : ')
 	if anjg == '':
 		menu()
 	elif anjg == "1":
 		dirs = os.listdir("OK")
-		print('──────────────────────────────────────────')
 		for file in dirs:
 			print(" [*] "+file)
 		try:
-			print('──────────────────────────────────────────')
 			file = input(" [?] file : ")
 			if file == "":
 				menu()
 			totalok = open("OK/%s"%(file)).read().splitlines()
 		except IOError:
 			exit(" [!] file %s tidak tersedia"%(file))
-		print('──────────────────────────────────────────')
 		os.system("cat OK/%s"%(file))
-		print('──────────────────────────────────────────')
 		input(" [*] tekan enter untuk kembali ke menu")
 		menu()
 	elif anjg == "2":
 		dirs = os.listdir("CP")
-		print('──────────────────────────────────────────')
 		for file in dirs:
 			print(" [*] "+file)
 		try:
-			print('──────────────────────────────────────────')
 			file = input(" [?] file : ")
 			if file == "":
 				menu()
 			totalcp = open("CP/%s"%(file)).read().splitlines()
 		except IOError:
 			exit(" [!] file %s tidak tersedia"%(file))
-		print('──────────────────────────────────────────')
 		os.system("cat CP/%s"%(file))
-		print('──────────────────────────────────────────')
 		input(" [*] tekan enter untuk kembali ke menu ")
 		menu()
 	else:
@@ -432,7 +411,6 @@ def publik():
 	idt=input(" [?] masukkan id : ")
 	if idt in[""]:
 		menu()
-	print('──────────────────────────────────────────')
 	print(" [1] crack all id   [2] crack id old")
 	ask=input(" [?] pilih : ")
 	if ask in[""]:
@@ -469,7 +447,6 @@ def publik():
 		
 ### ATUR SANDI ###
 def atursandi():
-	print('──────────────────────────────────────────')
 	print(" [1] otomatis  [2] manual  [3] gabungkan")
 	ask=input(" [?] pilih : ")
 	if ask in[""]:
@@ -484,7 +461,6 @@ def atursandi():
 		exit()
 
 def munculopsi():
-	print('──────────────────────────────────────────')
 	print(" [1] munculkan opsi  [2] jangan munculkan")
 	ask=input(" [?] pilih : ")
 	if ask in[""]:
@@ -499,18 +475,15 @@ def munculopsi():
 ### OTOMATIS ###
 def otomatis():
 	munculopsi()
-	print('──────────────────────────────────────────')
 	print(" [1]. metode API")
 	print(" [2]. metode mbasic")
 	print(" [3]. metode mobile")
-	print('──────────────────────────────────────────')
 	ask=input(" [?] pilih : ")
 	if ask=="":
 		exit(" %s[!] isi jawaban dengan benar!"%(M))
 	elif ask=="1":
 		print(' [+] hasil OK disimpan ke -> ok.txt')
 		print(' [+] hasil CP disimpan ke -> cp.txt')
-		print('──────────────────────────────────────────')
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				uid, name = user.split("<=>")
@@ -524,7 +497,6 @@ def otomatis():
 	elif ask=="2":
 		print(' [+] hasil OK disimpan ke -> ok.txt')
 		print(' [+] hasil CP disimpan ke -> cp.txt')
-		print('──────────────────────────────────────────')
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				uid, name = user.split("<=>")
@@ -538,7 +510,6 @@ def otomatis():
 	elif ask=="3":
 		print(' [+] hasil OK disimpan ke -> ok.txt')
 		print(' [+] hasil CP disimpan ke -> cp.txt')
-		print('──────────────────────────────────────────')
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				uid, name = user.split("<=>")
@@ -553,25 +524,21 @@ def otomatis():
 ### MANUAL ###
 def manual():
 	munculopsi()
-	print('──────────────────────────────────────────')
 	print(" [!] gunakan , (koma) sebagai pemisah")
 	pwek=input(' [?] buat kata sandi : ')
 	if pwek=="":
 		exit(" %s[!] isi jawaban dengan benar!"%(M))
 	elif len(pwek)<=5:
 		exit(" %s[!] masukan sandi minimal 6 angka!"%(M))
-	print('──────────────────────────────────────────')
 	print(" [1]. metode API")
 	print(" [2]. method mbasic")
 	print(" [3]. method mobile")
-	print('──────────────────────────────────────────')
 	ask=input(" [?] pilih : ")
 	if ask=="":
 		exit(" %s[!] isi jawaban dengan benar!"%(M))
 	elif ask=="1":
 		print(' [+] hasil OK disimpan ke -> ok.txt')
 		print(' [+] hasil CP disimpan ke -> cp.txt')
-		print('──────────────────────────────────────────')
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				uid, name = user.split("<=>")
@@ -580,7 +547,6 @@ def manual():
 	elif ask=="2":
 		print(' [+] hasil OK disimpan ke -> ok.txt')
 		print(' [+] hasil CP disimpan ke -> cp.txt')
-		print('──────────────────────────────────────────')
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				uid, name = user.split("<=>")
@@ -589,7 +555,6 @@ def manual():
 	elif ask=="3":
 		print(' [+] hasil OK disimpan ke -> ok.txt')
 		print(' [+] hasil CP disimpan ke -> cp.txt')
-		print('──────────────────────────────────────────')
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				uid, name = user.split("<=>")
@@ -599,7 +564,6 @@ def manual():
 ### GABUNGAN ###
 def gabungkan():
 	munculopsi()
-	print('──────────────────────────────────────────')
 	print(" [!] sandi bawaan nama123,1234,12345")
 	print(" [!] gunakan , (koma) sebagai pemisah")
 	pwek=input(' [?] sandi gabungan : ')
@@ -607,18 +571,15 @@ def gabungkan():
 		exit(" %s[!] isi jawaban dengan benar!"%(M))
 	elif len(pwek)<=5:
 		exit(" %s[!] masukan sandi minimal 6 angka!"%(M))
-	print('──────────────────────────────────────────')
 	print(" [1]. method API")
 	print(" [2]. method mbasic")
 	print(" [3]. method mobile")
-	print('──────────────────────────────────────────')
 	ask=input(" [?] pilih : ")
 	if ask=="":
 		exit(" %s[!] isi jawaban dengan benar!"%(M))
 	elif ask=="1":
 		print(' [+] hasil OK disimpan ke -> ok.txt')
 		print(' [+] hasil CP disimpan ke -> cp.txt')
-		print('──────────────────────────────────────────')
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				uid, name = user.split("<=>")
@@ -632,7 +593,6 @@ def gabungkan():
 	elif ask=="2":
 		print(' [+] hasil OK disimpan ke -> ok.txt')
 		print(' [+] hasil CP disimpan ke -> cp.txt')
-		print('──────────────────────────────────────────')
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				uid, name = user.split("<=>")
@@ -646,7 +606,6 @@ def gabungkan():
 	elif ask=="3":
 		print(' [+] hasil OK disimpan ke -> ok.txt')
 		print(' [+] hasil CP disimpan ke -> cp.txt')
-		print('──────────────────────────────────────────')
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				uid, name = user.split("<=>")
