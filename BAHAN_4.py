@@ -159,7 +159,7 @@ def menu():
     print("[3]. lihat hasil crack")
     print("[4]. setting user agent")
     print("[5]. logout (hapus token)")
-    asw = input(" [?] pilih menu : ")
+    asw = input("[?] pilih menu : ")
     if asw == "":
     	menu()
     elif asw == "1":
@@ -172,10 +172,10 @@ def menu():
     	gantiua()
     elif asw == "5":
     	os.system('rm -f token.txt')
-    	jalan(" [-] berhasil menghapus token ")
+    	jalan("[-] berhasil menghapus token ")
     	exit()
     else:
-    	jalan(" [-] pilih jawaban dengan bener ! ")
+    	jalan("[-] pilih jawaban dengan bener ! ")
     	menu() 
  
 def gantiua():
