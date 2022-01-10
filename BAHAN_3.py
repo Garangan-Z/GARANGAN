@@ -1146,7 +1146,7 @@ def api(uid,pwx,loop):
 					dett = jutt[0]+"."+jitt[0]+"m"
 			elif dutt>0 and dutt<60:
 				dett = ditt[0]+"d"
-	print("\r [Chan] %s/%s OK:%s CP:%s %s[%s%s%s] [%s%s%s]"%(loop,len(id),len(ok),len(cp),h,k,persen,h,k,dett,h), end=' ');sys.stdout.flush()
+        print("\r%s[%sCrack%s]•>[%s%s/%s%s]•>[%sOK:%s%s]•>[%sCP:%s%s]%s"%(O,P,O,P,self.ko,len(self.fl),O,P,len(self.ada),O,P,len(self.cp),O,P), end=' ');sys.stdout.flush()
 	ses = requests.Session()
 	for pw in pwx:
 		try:
