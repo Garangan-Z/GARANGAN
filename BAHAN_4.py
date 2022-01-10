@@ -148,6 +148,7 @@ def menu():
         ttl = a['birthday']
     except (KeyError, IOError):
         os.system('clear')
+        menu()
         print("\n %s[-] token kadaluwarsa!"%(M))
         os.system('rm -f token.txt')
     except requests.exceptions.ConnectionError:
